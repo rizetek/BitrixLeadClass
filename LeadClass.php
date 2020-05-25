@@ -13,38 +13,38 @@ class LeadClass {
 		    if($isProcessed){
 		        if($isRepeat){
     		        $leadRes = array(
-    								'LEAD_ID' => $incoming['ID'],
-    								'TITLE' => $incoming['TITLE'],
-    								'DATE_CREATE' => $incoming['DATE_CREATE'],
-    								'MANAGER' => $incoming['ASSIGNED_BY_NAME'] . ' ' . $incoming['ASSIGNED_BY_LAST_NAME'],
-    								'STATUS' => 'Повторный. Обработан'
+					'LEAD_ID' => $incoming['ID'],
+					'TITLE' => $incoming['TITLE'],
+					'DATE_CREATE' => $incoming['DATE_CREATE'],
+					'MANAGER' => $incoming['ASSIGNED_BY_NAME'] . ' ' . $incoming['ASSIGNED_BY_LAST_NAME'],
+					'STATUS' => 'Повторный. Обработан'
     				);
 		        }else{
 		            $leadRes = array(
-								'LEAD_ID' => $incoming['ID'],
-								'TITLE' => $incoming['TITLE'],
-								'DATE_CREATE' => $incoming['DATE_CREATE'],
-								'MANAGER' => $incoming['ASSIGNED_BY_NAME'] . ' ' . $incoming['ASSIGNED_BY_LAST_NAME'],
-								'STATUS' => 'Первичный. Обработан'
+					'LEAD_ID' => $incoming['ID'],
+					'TITLE' => $incoming['TITLE'],
+					'DATE_CREATE' => $incoming['DATE_CREATE'],
+					'MANAGER' => $incoming['ASSIGNED_BY_NAME'] . ' ' . $incoming['ASSIGNED_BY_LAST_NAME'],
+					'STATUS' => 'Первичный. Обработан'
 					);
 		            
 		        }
 		    }else{
 		        if($isRepeat){
     		        $leadRes = array(
-    								'LEAD_ID' => $incoming['ID'],
-    								'TITLE' => $incoming['TITLE'],
-    								'DATE_CREATE' => $incoming['DATE_CREATE'],
-    								'MANAGER' => $incoming['ASSIGNED_BY_NAME'] . ' ' . $incoming['ASSIGNED_BY_LAST_NAME'],
-    								'STATUS' => 'Повторный. Необработан'
+					'LEAD_ID' => $incoming['ID'],
+					'TITLE' => $incoming['TITLE'],
+					'DATE_CREATE' => $incoming['DATE_CREATE'],
+					'MANAGER' => $incoming['ASSIGNED_BY_NAME'] . ' ' . $incoming['ASSIGNED_BY_LAST_NAME'],
+					'STATUS' => 'Повторный. Необработан'
     				);
 		        }else{
 		            $leadRes = array(
-								'LEAD_ID' => $incoming['ID'],
-								'TITLE' => $incoming['TITLE'],
-								'DATE_CREATE' => $incoming['DATE_CREATE'],
-								'MANAGER' => $incoming['ASSIGNED_BY_NAME'] . ' ' . $incoming['ASSIGNED_BY_LAST_NAME'],
-								'STATUS' => 'Повторный. Обработан'
+					'LEAD_ID' => $incoming['ID'],
+					'TITLE' => $incoming['TITLE'],
+					'DATE_CREATE' => $incoming['DATE_CREATE'],
+					'MANAGER' => $incoming['ASSIGNED_BY_NAME'] . ' ' . $incoming['ASSIGNED_BY_LAST_NAME'],
+					'STATUS' => 'Повторный. Обработан'
 					);
 		            
 		        }
