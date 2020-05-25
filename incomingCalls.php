@@ -1,5 +1,5 @@
 <?
-    require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+	require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 	require_once($_SERVER["DOCUMENT_ROOT"]."/local/php_interface/classes/LeadClass.php");
 	CJSCore::Init(array("jquery"));
 	global $APPLICATION;
@@ -19,24 +19,6 @@
 		var dateFrom = $(this).find('#dateFrom').val();
 		var dateTo = $(this).find('#dateTo').val();
 		BX.showWait();
-		/*
-		$.ajax({
-			method: 'POST',
-			dataType: 'json',
-			url: 'getReport.php',
-			data: {
-				action: 'getReport',
-				dateFrom: dateFrom,
-				dateTo: dateTo
-			}
-		})
-		.success(function(info) {  
-			BX.closeWait();      
-			console.log(info.data);
-			console.log(info.filename);
-			document.location = info.filename;
-		});
-		*/
 		var dates;
 		$.ajax({
 			method: 'POST',
@@ -49,7 +31,6 @@
 			}
 		})
 		.success(function(data) { 
-			BX.closeWait();
 			dates = data;
 			var count = dates.length;
 			var leads = [];
@@ -77,6 +58,7 @@
 									data: leads
 								}
 							}).success(function(result) {
+								BX.closeWait();
 								console.log(result);
 								document.location = result;
 							})
@@ -84,7 +66,6 @@
 				})
 				.success(function(result) {
 						var dataStr = result.data;
-						//dataStr = dataStr.slice(1, -1);
 						leads = leads.concat(dataStr);
 						var count = Object.keys(leads).length;
 						$('#textStatus').text('Обработано лидов ' + count);
